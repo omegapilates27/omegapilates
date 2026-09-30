@@ -15,7 +15,7 @@ let preparedMessage='';
 let selectedSession='group';
 
 const sessionLabels={group:'Lớp nhóm / Group class — 500.000 VNĐ',private:'Cá nhân 1:1 / Private 1:1 — 1.000.000 VNĐ'};
-const buildLinks={sms:message=>`sms:+84888052727?body=${encodeURIComponent(message)}`,zalo:message=>`https://zalo.me/0888052727?text=${encodeURIComponent(message)}`,whatsapp:message=>`https://wa.me/84888052727?text=${encodeURIComponent(message)}`};
+const buildLinks={sms:message=>`sms:+84888052727?body=${encodeURIComponent(message)}`,zalo:()=>`https://zalo.me/0888052727`,whatsapp:message=>`https://wa.me/84888052727?text=${encodeURIComponent(message)}`};
 
 function openBooking(event){
   event.preventDefault();
@@ -57,9 +57,23 @@ bookingForm?.addEventListener('submit',event=>{
 
 function updateChannel(channel){
   methods.forEach(item=>{const selected=item.dataset.method===channel;item.classList.toggle('is-selected',selected);item.setAttribute('aria-checked',String(selected));});
-  if(confirmLink&&preparedMessage){confirmLink.href=buildLinks[channel](preparedMessage);confirmLink.target=channel==='sms'?'_self':'_blank';confirmLink.rel='noreferrer';}
+  if(confirmLink&&preparedMessage){confirmLink.href=buildLinks[channel](preparedMessage);confirmLink.target=channel==='sms'?'_self':'_blank';confirmLink.rel='noreferrer';confirmLink.dataset.method=channel;}
 }
 methods.forEach(method=>method.addEventListener('click',()=>updateChannel(method.dataset.method)));
+async function copyBookingMessage(){
+  try{
+    if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(preparedMessage);return true;}
+    const area=document.createElement('textarea');area.value=preparedMessage;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const copied=document.execCommand('copy');area.remove();return copied;
+  }catch(error){console.warn('Could not copy booking message.',error);return false;}
+}
+confirmLink?.addEventListener('click',async event=>{
+  if(confirmLink.dataset.method!=='zalo')return;
+  event.preventDefault();
+  window.open(confirmLink.href,'_blank','noopener,noreferrer');
+  const copied=await copyBookingMessage();
+  const notice=document.querySelector('#zalo-copy-notice');
+  if(notice)notice.textContent=copied?'Đã copy tin nhắn. Mở Zalo và dán vào ô soạn thảo / Message copied. Open Zalo and paste it.':'Hãy copy tin nhắn bên trên rồi dán vào Zalo / Copy the message above and paste it into Zalo.';
+});
 
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}}),{threshold:.08});
 document.querySelectorAll('.section,.price-card,.program-list article').forEach(element=>{element.classList.add('reveal');observer.observe(element);});
