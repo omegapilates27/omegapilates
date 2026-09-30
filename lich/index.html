@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f2721">
+  <meta name="description" content="Lịch lớp nhóm hàng tuần tại Omega Pilates — Weekly group class schedule in Hanoi.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Lịch lớp / Schedule — Omega Pilates</title>
+</head>
+<body class="schedule-page">
+  <header class="site-header" id="top">
+    <a class="wordmark wordmark--small" href="../" aria-label="Omega Pilates về trang chủ / Back to home"><span>Ωmega</span><em>PILATES</em></a>
+    <nav class="nav" aria-label="Điều hướng chính / Main navigation"><a href="../#story">Câu chuyện / Story</a><a class="nav-cta" href="#schedule">Lịch lớp / Schedule</a><a href="../#booking">Đặt lịch / Book</a></nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Điều hướng mobile / Mobile navigation"><a href="../#story">Câu chuyện / Story</a><a href="#schedule">Lịch lớp / Schedule</a><a href="../#booking">Đặt lịch trải nghiệm / Book a session</a></nav>
+
+  <main>
+    <section class="schedule-hero section-dark">
+      <div><p class="eyebrow">OMEGA PILATES · WEEKLY SCHEDULE</p><h1>Lịch lớp<br><span>hàng tuần.</span></h1><p class="hero-sub">Weekly group classes · Tây Hồ, Hà Nội</p></div>
+      <div class="schedule-hero-note"><p>Mỗi lớp nhóm tối đa 4 người. Lịch có thể thay đổi theo tuần; vui lòng đặt chỗ trước để Omega xác nhận chỗ tập phù hợp.</p><p class="en">Each group class is limited to 4 people. Schedule may change weekly; please book ahead so Omega can confirm your place.</p></div>
+    </section>
+
+    <section class="schedule-shell section-cream" id="schedule">
+      <div class="schedule-heading"><div><p class="eyebrow">CLASS SCHEDULE / LỊCH HỌC</p><h2>Tuần này<br><em>tại Omega</em></h2></div><div class="schedule-heading-actions"><a class="text-link schedule-update-link" href="https://docs.google.com/spreadsheets/d/1rCwSwyrqlW4jn-pfhaL3r1zwal2ZVFui1_0MZM4xuN0/edit?usp=sharing" target="_blank" rel="noreferrer">Cập nhật lịch tuần / Update schedule ↗</a><a class="button button--dark schedule-book-top" href="../?session=group#booking">Đặt lịch tập thử / Book a trial <span>↗</span></a></div></div>
+      <div class="schedule-toolbar" aria-label="Công cụ lịch / Schedule controls"><button class="week-arrow" type="button" data-week="previous" aria-label="Tuần trước / Previous week">←</button><strong id="week-label">Tuần hiện tại / This week</strong><button class="week-arrow" type="button" data-week="next" aria-label="Tuần sau / Next week">→</button><button class="today-button" type="button" data-week="today">Hôm nay / Today</button></div>
+      <div class="schedule-filters" role="group" aria-label="Lọc lớp / Filter classes"><button class="filter-button is-active" type="button" data-filter="all">Tất cả / All</button><button class="filter-button" type="button" data-filter="mat">Mat Pilates Group</button><button class="filter-button" type="button" data-filter="reformer">Reformer Pilates Group</button><button class="filter-button" type="button" data-filter="wall-unit">Wall unit Pilates Group</button></div><p class="sheet-status" id="sheet-status" role="status">Đang tải lịch từ Google Sheets / Loading schedule from Google Sheets…</p>
+
+      <div class="schedule-grid is-loading" id="schedule-grid">
+        <article class="day-column" data-day="monday"><header><span>THỨ HAI</span><b>MON</b></header><div class="class-stack"><div class="class-card" data-type="mat"><time>07:00 — 08:00</time><h3>Mat Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="reformer"><time>18:30 — 19:30</time><h3>Reformer Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column" data-day="tuesday"><header><span>THỨ BA</span><b>TUE</b></header><div class="class-stack"><div class="class-card" data-type="mat"><time>09:00 — 10:00</time><h3>Mat Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="wall-unit"><time>19:30 — 20:30</time><h3>Wall unit Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column" data-day="wednesday"><header><span>THỨ TƯ</span><b>WED</b></header><div class="class-stack"><div class="class-card" data-type="wall-unit"><time>07:00 — 08:00</time><h3>Wall unit Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="reformer"><time>18:30 — 19:30</time><h3>Reformer Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column" data-day="thursday"><header><span>THỨ NĂM</span><b>THU</b></header><div class="class-stack"><div class="class-card" data-type="mat"><time>09:00 — 10:00</time><h3>Mat Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="wall-unit"><time>19:30 — 20:30</time><h3>Wall unit Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column" data-day="friday"><header><span>THỨ SÁU</span><b>FRI</b></header><div class="class-stack"><div class="class-card" data-type="mat"><time>07:00 — 08:00</time><h3>Mat Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="reformer"><time>18:30 — 19:30</time><h3>Reformer Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column" data-day="saturday"><header><span>THỨ BẢY</span><b>SAT</b></header><div class="class-stack"><div class="class-card" data-type="wall-unit"><time>09:00 — 10:00</time><h3>Wall unit Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div><div class="class-card" data-type="reformer"><time>10:30 — 11:30</time><h3>Reformer Pilates Group</h3><p>Lớp nhóm / Group class</p><small>Tối đa 4 người / Max 4 people</small><a href="../?session=group#booking" class="class-book">Đặt tập thử / Book trial</a></div></div></article>
+        <article class="day-column day-column--closed" data-day="sunday"><header><span>CHỦ NHẬT</span><b>SUN</b></header><div class="closed-note"><strong>Studio nghỉ</strong><span>Studio closed</span></div></article>
+      </div>
+
+      <div class="schedule-note"><strong>Chưa biết lớp nào phù hợp?</strong><span>Not sure which class is right for you?</span><p>Chọn “Đặt lịch tập thử”, điền thông tin và Omega sẽ tư vấn lớp phù hợp với mục tiêu, khả năng vận động và lịch của bạn.</p><p class="en">Choose “Book a trial”, share your details and Omega will recommend a class based on your goals, mobility and availability.</p><a href="../?session=group#booking" class="button button--gold">Đặt lịch tập thử / Book a trial <span>↗</span></a></div>
+    </section>
+  </main>
+  <footer class="footer section-dark"><a class="wordmark" href="../"><span>Ωmega</span><em>PILATES</em></a><p>TRUE CLASSICAL PILATES · HÀ NỘI / HANOI</p><small>© 2026 Omega Pilates. All movement, with intention.</small></footer>
+  <script src="schedule.js" defer></script>
+</body>
+</html>
