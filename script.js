@@ -19,7 +19,10 @@ const buildLinks={sms:message=>`sms:+84888052727?body=${encodeURIComponent(messa
 
 function openBooking(event){
   event.preventDefault();
-  selectedSession=event.currentTarget.dataset.session||'group';
+  openBookingForSession(event.currentTarget.dataset.session||'group');
+}
+function openBookingForSession(session='group'){
+  selectedSession=session;
   if(sessionType) sessionType.value=selectedSession;
   bookingForm?.reset();
   if(sessionType) sessionType.value=selectedSession;
@@ -28,6 +31,9 @@ function openBooking(event){
   dialog?.showModal();
 }
 links.forEach(link=>link.addEventListener('click',openBooking));
+if(window.location.hash==='#booking'&&dialog){
+  window.setTimeout(()=>openBookingForSession(new URLSearchParams(window.location.search).get('session')||'group'),120);
+}
 document.querySelector('.dialog-close')?.addEventListener('click',()=>dialog.close());
 dialog?.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
 

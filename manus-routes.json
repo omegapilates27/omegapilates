@@ -1,5 +1,7 @@
 {
   "routes": [
-    { "path": "/", "title": "Omega Pilates — Classical Pilates tại Tây Hồ" }
+    { "path": "/", "title": "Omega Pilates — Classical Pilates tại Tây Hồ" },
+    { "path": "/lich", "title": "Omega Pilates — Lịch lớp nhóm hàng tuần" },
+    { "path": "/lich/cap-nhat", "title": "Omega Pilates — Cập nhật lịch tuần" }
   ]
 }
